@@ -24,11 +24,13 @@ public class GameManager : MonoBehaviour
         RestartTimerCounter();
     }
 
+    //RETURNS WHICH PLAYERS TURN IS
     public PlayerSymbol GetPlayerSymbol()
     {
         return playerSymbol;
     }
 
+    //GIVES TURN TO OPPONENT PLAYER
     void PlayerSymbolFlip()
     {
         if (playerSymbol == PlayerSymbol.X)
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //CHECKS IF GAME IS ENDED
     void CheckGameWinner()
     {
         PlayerSymbol winner = gameGrid.CheckGameWinner();
@@ -52,12 +55,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //GAME END
     void Win(PlayerSymbol playerSymbol)
     {
         winnerText.text = (playerSymbol + " is a Winner!");
         RestartGame();
     }
 
+    //TIMER FUNCTION
     void RestartTimerCounter()
     {
         if (gameRestarting)
@@ -73,17 +78,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //GAME RESTART
     void RestartGame()
     {
         gameRestarting = true;
     }
 
+    //SUCCESSFUL TURN
     public void Turn()
     {
         PlayerSymbolFlip();
         CheckGameWinner();
     }
 
+    //GETS IS GAME RESTARTING BOOL
     public bool IsGameRestarting()
     {
         return gameRestarting;

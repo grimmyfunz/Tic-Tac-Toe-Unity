@@ -13,6 +13,7 @@ public class Cell : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
+    //IF BUTTON WAS CLICKED
     public void ButtonChangeState()
     {
         if (cellPlayerSymbol == PlayerSymbol.Void && !gameManager.IsGameRestarting())
@@ -22,12 +23,14 @@ public class Cell : MonoBehaviour
         }
     }
 
+    //CHANGES CELLS SYMBOL AND CHANGES TEXT
     public void SetPlayerSymbol(PlayerSymbol state)
     {
         cellPlayerSymbol = state;
         GetComponentInChildren<Text>().text = (cellPlayerSymbol == PlayerSymbol.Void ? "" : cellPlayerSymbol.ToString());
     }
 
+    //RETURNS CELLS SYMBOL
     public PlayerSymbol GetPlayerSymbol()
     {
         return cellPlayerSymbol;

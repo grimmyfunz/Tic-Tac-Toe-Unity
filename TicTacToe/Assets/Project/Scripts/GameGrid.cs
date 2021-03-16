@@ -14,6 +14,7 @@ public class GameGrid : MonoBehaviour
         FillGrid();
     }
 
+    //CLEARS AND FILLS GRID WITH EMPTY CELLS
     public void FillGrid()
     {
         ClearGrid();
@@ -30,6 +31,7 @@ public class GameGrid : MonoBehaviour
         }
     }
 
+    //CLEARS GRID
     void ClearGrid()
     {
         foreach (Transform child in transform)
@@ -38,6 +40,7 @@ public class GameGrid : MonoBehaviour
         }
     }
 
+    //CHECK GRID ON WINNING CONDITIONS
     public PlayerSymbol CheckGameWinner()
     {
         for (int i = 0; i < 3; i++)
